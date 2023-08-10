@@ -1,38 +1,43 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const coursesContainer = document.getElementById("courses");
-  const filterButtons = document.querySelectorAll(".filter-button");
-  const clearButton = document.getElementById("clear-button");
-  const dateSlider = document.getElementById("date-slider");
-  const dateOutput = document.getElementById("date-output");
+const coursesData = [
+    { name: 'Umgang mit Komplexität und Diversität im internationalen Kontext', category: 'Technologie', language: 'Deutsch', type: 'Persönlich' },
+    { name: 'Basic – Sicherheitstraining', category: 'Technologie', language: 'Englisch', type: 'Persönlich' },
+    { name: 'Intensiv – Sicherheitstraining', category: 'Technologie', language: 'Deutsch', type: 'Persönlich' },
+    { name: 'Lebensrettende Maßnahmen im Auslandseinsatz', category: 'Technologie', language: 'Deutsch', type: 'Persönlich' },
+    { name: 'Umgang mit Stress, Belastung und Trauma', category: 'Geschäft', language: 'Deutsch', type: 'Persönlich' },
+    { name: 'Macht-bewusst. Grenzüberschreitung und sexualisierte Gewalt: Erkennen – Verstehen – Handeln', category: 'Geschäft', language: 'Deutsch', type: 'Persönlich' },
+    { name: 'Orientierungskurs Landessprachen', category: 'Technologie', language: 'Deutsch', type: 'Persönlich' },
+    { name: 'Moderieren im internationalen Kontext', category: 'Technologie', language: 'Deutsch', type: 'Persönlich' },
+    { name: 'Präsentieren im internationalen Kontext', category: 'Geschäft', language: 'Deutsch', type: 'Persönlich' },
+    { name: 'Effective negotiation in the international context', category: 'Geschäft', language: 'Englisch', type: 'Persönlich' },
+    { name: 'Beratungsrollen und Beratungskompetenzen', category: 'Geschäft', language: 'Deutsch', type: 'Persönlich' },
+    { name: 'Projektmanagement in der internationalen Zusammenarbeit', category: 'Technologie', language: 'Deutsch', type: 'Persönlich' },
+    { name: 'Organisationen verstehen und begleiten', category: 'Geschäft', language: 'Deutsch', type: 'Persönlich' },
+    { name: 'Partner*in vor der Ausreise', category: 'Geschäft', language: 'Deutsch', type: 'Persönlich' },
+    { name: 'Ausreise mit Kindern', category: 'Geschäft', language: 'Deutsch', type: 'Persönlich' },
+    { name: 'Learning 4 Development – Dein Thema im Fokus', category: 'Technologie', language: 'Deutsch', type: 'Persönlich' },
+    { name: 'Landesanalyse Präsenz', category: 'Geschäft', language: 'Deutsch', type: 'Persönlich' },
+    { name: 'Entwicklungspolitik – Agenda 2030 gemeinsam gestalten Präsenz', category: 'Geschäft', language: 'Deutsch', type: 'Persönlich' },
+    { name: 'Fachbezogenes Sprachtraining Präsenz', category: 'Geschäft', language: 'Deutsch', type: 'Persönlich' },
+    { name: 'Sprachtraining Präsenz', category: 'Geschäft', language: 'Deutsch', type: 'Persönlich' },
+    { name: 'Viren, Bakterien, Parasiten – gut geschützt im Auslandseinsatz', category: 'Technologie', language: 'Deutsch', type: 'Online' },
+    { name: 'Refresher Sicherheitstraining', category: 'Technologie', language: 'Deutsch', type: 'Online' },
+    { name: 'Veränderungsmanagement', category: 'Geschäft', language: 'Deutsch', type: 'Online' },
+    { name: 'Kooperationen und Netzwerke', category: 'Geschäft', language: 'Deutsch', type: 'Online' },
+    { name: 'Mit Kindern im Einsatzland leben', category: 'Geschäft', language: 'Deutsch', type: 'Online' },
+    { name: 'Als Partner*in im Einsatzland', category: 'Geschäft', language: 'Deutsch', type: 'Online' },
+    { name: 'Landesanalyse Digital', category: 'Technologie', language: 'Deutsch', type: 'Online' },
+    { name: 'Entwicklungspolitik – Agenda 2030 gemeinsam gestalten Digital', category: 'Geschäft', language: 'Deutsch', type: 'Online' },
+    { name: 'Fachbezogenes Sprachtraining Digital', category: 'Geschäft', language: 'Deutsch', type: 'Online' },
+    { name: 'Sprachtraining Digital', category: 'Geschäft', language: 'Deutsch', type: 'Online' },
+    // ... Add more course data as needed ...
+];
+
+
+const coursesContainer = document.getElementById('courses');
+const categoryButtons = document.querySelectorAll('.category-button');
+const languageButtons = document.querySelectorAll('.language-button');
+const typeButtons = document.querySelectorAll('.type-button');
 const clearButton = document.getElementById('clear-button'); // New clear button
-}
-  
-  let coursesData = []; // Will hold the parsed CSV data
-
-  // Fetch and parse the CSV file
-  fetch("courses.csv")
-    .then((response) => response.text())
-    .then((data) => {
-      coursesData = parseCSV(data);
-      updateCourses();
-    });
-
-  function parseCSV(csv) {
-    const lines = csv.trim().split("\n");
-    const headers = lines.shift().split(",");
-    const courses = [];
-
-    for (const line of lines) {
-      const values = line.split(",");
-      const course = {};
-      for (let i = 0; i < headers.length; i++) {
-        course[headers[i]] = values[i];
-      }
-      courses.push(course);
-    }
-
-    return courses;
-  }
 
 // Display all courses at the start
 displayCourses(coursesData);
