@@ -42,6 +42,31 @@ const clearButton = document.getElementById('clear-button'); // New clear button
 // Display all courses at the start
 displayCourses(coursesData);
 
+// Fetch and parse the CSV file
+  fetch("courses.csv")
+    .then((response) => response.text())
+    .then((data) => {
+      coursesData = parseCSV(data);
+      updateCourses();
+    });
+
+  function parseCSV(csv) {
+    const lines = csv.trim().split("\n");
+    const headers = lines.shift().split(",");
+    const courses = [];
+
+    for (const line of lines) {
+      const values = line.split(",");
+      const course = {};
+      for (let i = 0; i < headers.length; i++) {
+        course[headers[i]] = values[i];
+      }
+      courses.push(course);
+    }
+
+    return courses;
+  }
+
 // Handle button clicks
 const updateCoursesDisplay = () => {
     const selectedCategories = Array.from(categoryButtons)
