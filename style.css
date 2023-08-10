@@ -1,0 +1,152 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto 100px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #5c5c5c;
+    width: 100%;
+}
+
+.column {
+    width: 100%;
+}
+
+.column30 {
+    width: 30%;
+}
+
+.column70 {
+    width: 70%;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .column {
+        width: 48%;
+    }
+}
+
+fieldset {
+    margin: 0 10px 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: 2px solid #c30f08;
+    border-radius: 30px;
+    background-color: transparent;
+    color: #c30f08;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover,
+button.selected {
+    background-color: #c30f08;
+    color: white;
+}
+
+/* Recommended Improvements */
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.description {
+    margin: 20px 0;
+    text-align: center;
+    color: #777;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.results {
+    height: 600px; /* Adjust the height as needed */
+    overflow-y: auto;
+}
+
+
+.course {
+    margin: 10px;
+    padding: 15px;
+    width: calc(80% - 20px);
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.course:hover {
+    transform: translateY(-5px);
+    background-color: #f9f9f9;
+}
+
+/* ... Rest of the CSS ... */
+
+.clear-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #c30f08;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.clear-button:hover {
+    background-color: #c30f08;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.logo-image {
+    width: 236px; /* Adjust the width as needed */
+    height: auto;
+    margin: 20px 40px;
+}
+
+@media screen and (max-width: 767px) {
+    .results .course {
+        width: 100%;
+    }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Kursatlas</title>
+
+</head>
+<body>
+    <header>
+         <div class="logo">
+            <img src="https://www.giz.de/static/de/images/giz-logo.gif" alt="GIZ Logo" class="logo-image">
+        </div>
+ <h1>Kursatlas der Ausreisevorbereitung</h1>
+    </header>
+    
+    <div class="description">
+        <p>Filtern und finden Sie die perfekten Schulungskurse, die Ihren Vorlieben entsprechen. Wählen Sie Kategorien, Sprache und Typ aus, um Ihre Auswahl einzugrenzen.</p>
+    </div>
+    <div class="container">
+        <div class="column30">
+            <fieldset>
+                <legend>Kategorien auswählen:</legend>
+                <div class="button-group">
+                    <button class="category-button" value="Technologie">Technologie</button>
+                    <button class="category-button" value="Geschäft">Geschäft</button>
+                    <!-- Weitere Buttons für andere Kategorien hinzufügen -->
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Sprache auswählen:</legend>
+                <div class="button-group">
+                    <button class="language-button" value="Englisch">Englisch</button>
+                    <button class="language-button" value="Deutsch">Deutsch</button>
+                    <!-- Weitere Buttons für andere Sprachen hinzufügen -->
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Typ auswählen:</legend>
+                <div class="button-group">
+                    <button class="type-button" value="Persönlich">Persönlich</button>
+                    <button class="type-button" value="Online">Online</button>
+                    <!-- Weitere Buttons für andere Typen hinzufügen -->
+                </div>
+            </fieldset>
+            
+
+            <!-- Button zum Zurücksetzen aller Filter -->
+            <button id="clear-button" class="clear-button">Alle Filter zurücksetzen</button>
+        </div>
+
+        <div class="column70 results" id="courses"></div>
+
+    </div>
+    
+    <script src="script.js"></script>
+
+
+</body>
+</html>
