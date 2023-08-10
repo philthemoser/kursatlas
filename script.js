@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const dateSlider = document.getElementById("date-slider");
   const dateOutput = document.getElementById("date-output");
 const clearButton = document.getElementById('clear-button'); // New clear button
-const downloadButton = document.querySelector('#download-button');
+const downloadButton = document.querySelector('download-button');
   
   let coursesData = []; // Will hold the parsed CSV data
 
