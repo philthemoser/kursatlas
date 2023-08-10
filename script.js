@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const dateSlider = document.getElementById("date-slider");
   const dateOutput = document.getElementById("date-output");
 const clearButton = document.getElementById('clear-button'); // New clear button
-    
+const downloadButton = document.querySelector('#download-button');
+  
   let coursesData = []; // Will hold the parsed CSV data
 
   // Fetch and parse the CSV file
@@ -98,7 +99,17 @@ function displayCourses(courses) {
         coursesContainer.appendChild(courseDiv);
     });
 
+// Generate and download PDF
+    downloadButton.addEventListener('click', function () {
+        const doc = new jsPDF();
+        const filteredCourses = coursesData.filter(course => course.children !== '');
 
+        filteredCourses.forEach((course, index) => {
+            doc.text(`Course ${index + 1}: ${course.name}`, 10, 10 + index * 10);
+        });
+
+        doc.save('filtered_courses.pdf');
+    });
 }
 
 
