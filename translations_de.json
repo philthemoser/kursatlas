@@ -1,0 +1,12 @@
+{
+    "title": "Schulungskurs-Filter",
+    "selectCategories": "Kategorien auswählen:",
+    "technology": "Technologie",
+    "business": "Wirtschaft",
+    "selectLanguage": "Sprache auswählen:",
+    "english": "Englisch",
+    "german": "Deutsch",
+    "selectType": "Typ auswählen:",
+    "inPerson": "Persönlich",
+    "online": "Online"
+}
