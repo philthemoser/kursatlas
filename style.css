@@ -148,6 +148,8 @@ button.selected {
 @media screen and (max-width: 767px) {
     .results .course {
         width: 100%;
+    }
+     .results {
         overflow-y: revert;
     }
     .column30 {
