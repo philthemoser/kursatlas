@@ -148,5 +148,16 @@ button.selected {
 @media screen and (max-width: 767px) {
     .results .course {
         width: 100%;
+        overflow-y: revert;
     }
+    .column30 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+    .column70 {
+    width: 88%;
+    display: flex;
+    flex-direction: column;
+}
 }
